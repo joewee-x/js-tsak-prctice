@@ -19,3 +19,13 @@ function findMissingNumber(numbers){
 
 
 findMissingNumber([1, 2, 3, 4, 5,7])
+
+function reverse (word){
+    let reverseWord = ''
+    for(let i = word.length-1; i >= 0; i--){
+
+        reverseWord = word[i]
+    }
+    return reverseWord
+}
+console.log(reverse('blood'))
