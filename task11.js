@@ -28,4 +28,23 @@ const duplicates = (arr) => {
     }
     return maxItem
 }
-console.log(duplicates([4, 4, 3, 4, 'for', 3, 'for', 'for', 'for', 4]))
+// console.log(duplicates([4, 4, 3, 4, 'for', 3, 'for', 'for', 'for', 4]))
+let isPalindrome = function(x) {
+    let reversed = String(x).split('').reverse().join;
+    return x === reversed
+    
+};
+// console.log(isPalindrome(233))
+let pali = (x) => {
+    let word = String(x)
+    let rev = ''
+    for(let i = word.length-1; i >= 0; i--){
+        rev += word[i]
+    }
+    if(word === rev){
+        return true
+    }else{
+        return false
+    }
+}
+console.log(pali(-121))
