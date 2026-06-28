@@ -107,5 +107,44 @@ let removeElement = function(nums, val) {
     return newArr
     
 };
-console.log(removeElement([0,1,2,2,3,0,4,2], 2))
+// console.log(removeElement([0,1,2,2,3,0,4,2], 2))
+var isPerfectSquare = function(num) {
+    if(num < 0) return false;
+    for(let i = 0; i * i <= num; i++){
+        if(i * i === num) return true
+    }
+    return false
+};
+// console.log(isPerfectSquare(14))
+let singleNumber = function(nums) {
+    for(let i = 0; i < nums.length; i++){
+        for(let j = i++; j < nums.length; j++){
+            if(nums[j] !== nums[i]){
+                return nums[i]
+            }
+        }
+    }
+};
+// console.log(singleNumber([2, 2, 1]))
+let students = [
+    {name : 'John', score : 90},
+    {name : 'John', score : 50},
+    {name : 'John', score : 70},
+]
 
+let result = students.map(student => {
+    let grade;
+    if(student.score >= 90){
+        grade = 'A'
+    }else if(student.score >= 70){
+        grade = 'B'
+    }else if(student.score >= 50){
+        grade = 'C'
+    }
+
+    return {
+        ...student,
+        grade : grade
+    }
+})
+console.log(result)
