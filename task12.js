@@ -47,5 +47,31 @@ const totValueEach = prods.map((prod) => {
 
 const sortProd = totValueEach.sort((a, b) => b.totalValue - a.totalValue)
 const totVal = sortProd.reduce((total, val) => total + val.totalValue, 0)
-console.log(totVal)
-console.log(sortProd)
+// console.log(totVal)
+// console.log(sortProd)
+
+const students = [
+  { name: "John", score: 55 },
+  { name: "Mary", score: 91 },
+  { name: "Peter", score: 78 },
+  { name: "Grace", score: 65 }
+];
+
+const grades = students.map(student => {
+  let grade = '';
+  if(student.score >= 90){
+    grade = 'A'
+  }else if(student.score >= 70){
+    grade = 'B'
+  }else if(student.score >= 50){
+    grade = 'C'
+  }else if(student.score < 50){
+    grade = 'F'
+  }else {
+    grade = 'Invalid Score'
+  }
+  return {...student, grade : grade}
+})
+console.log(grades)
+const stu = grades.sort((a, b) => a.grade.localeCompare(b.grade))
+console.log(stu)
