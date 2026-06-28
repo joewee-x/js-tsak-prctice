@@ -44,4 +44,8 @@ const prods = [
 const totValueEach = prods.map((prod) => {
   return {...prod, totalValue : prod.price * prod.qty}
 })
-console.log(totValueEach)
+
+const sortProd = totValueEach.sort((a, b) => b.totalValue - a.totalValue)
+const totVal = sortProd.reduce((total, val) => total + val.totalValue, 0)
+console.log(totVal)
+console.log(sortProd)
