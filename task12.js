@@ -86,5 +86,19 @@ const wordsCheck = [
 
 const wordLength = wordsCheck
   .sort((a, b) => a.length - b.length)
-  .forEach(word => console.log(`${word} - ${word.length}`))
+  // .forEach(word => console.log(`${word} - ${word.length}`))
 // console.log(wordLength)
+
+const salaries = 
+[
+  { name: "John", salary: 120000 },
+  { name: "Mary", salary: 180000 },
+  { name: "Peter", salary: 150000 }
+];
+const salaryIncrease = salaries.map(salaryPercent => {
+  const salaryIncreased = salaryPercent.salary * 1.1
+  return {...salaryPercent, salaryIncrease : salaryIncreased}
+})
+console.log(salaryIncrease)
+const totPayrol = salaryIncrease.reduce((total, val) => total + val.salaryIncrease, 0)
+console.log(totPayrol)
