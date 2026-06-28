@@ -72,6 +72,19 @@ const grades = students.map(student => {
   }
   return {...student, grade : grade}
 })
-console.log(grades)
+// console.log(grades)
 const stu = grades.sort((a, b) => a.grade.localeCompare(b.grade))
-console.log(stu)
+// console.log(stu)
+
+const wordsCheck = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "React",
+  "Node"
+];
+
+const wordLength = wordsCheck
+  .sort((a, b) => a.length - b.length)
+  .forEach(word => console.log(`${word} - ${word.length}`))
+// console.log(wordLength)
