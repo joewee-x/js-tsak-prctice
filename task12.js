@@ -113,4 +113,15 @@ const nums = [
 const numsArrange = nums
   .sort((a, b) => a - b)
   .map(num => num * 1.075);
-console.log(numsArrange)
+// console.log(numsArrange)
+const items = [
+  { product: "Book", price: 2000, qty: 5 },
+  { product: "Pen", price: 500, qty: 10 },
+  { product: "Bag", price: 8000, qty: 2 }
+];
+
+const itemRevenue = items.map((item) => {
+  return {...item, itemRevenue : item.price * item.qty}
+});
+const overAllRevenue = itemRevenue.reduce((total, val) => total + val.itemRevenue, 0)
+console.log(overAllRevenue)
