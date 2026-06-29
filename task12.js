@@ -99,6 +99,18 @@ const salaryIncrease = salaries.map(salaryPercent => {
   const salaryIncreased = salaryPercent.salary * 1.1
   return {...salaryPercent, salaryIncrease : salaryIncreased}
 })
-console.log(salaryIncrease)
+// console.log(salaryIncrease)
 const totPayrol = salaryIncrease.reduce((total, val) => total + val.salaryIncrease, 0)
-console.log(totPayrol)
+// console.log(totPayrol)
+
+const nums = [
+  3000,
+  1500,
+  7000,
+  2500,
+  5000
+];
+const numsArrange = nums
+  .sort((a, b) => a - b)
+  .map(num => num * 1.075);
+console.log(numsArrange)
